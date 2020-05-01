@@ -44,7 +44,9 @@
     "preversion": "npm test && npm run lint",
     "version": "npm run dist && npm run build && git add -A dist",
     "postversion": "git push && git push --tags",
-    "toc": "markdown-toc -i README.md && git add README.md"
+    "toc": "markdown-toc -i README.md && git add README.md",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "pre-commit": [
     "lint",
@@ -140,9 +142,11 @@
     "react-motion": "^0.5.0",
     "react-transition-group": "^2.5.1",
     "recompose": "^0.24.0",
-    "screenfull": "^4.0.0"
+    "screenfull": "^4.0.0",
+    "snyk": "^1.316.1"
   },
   "engines": {
     "node": "8.x || 9.x"
-  }
+  },
+  "snyk": true
 }
